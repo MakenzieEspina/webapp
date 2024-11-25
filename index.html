@@ -17,18 +17,9 @@
        <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="script.js" async defer></script>
-    </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
 
-    <body>
+    <body onload="changeColor()">
+        <h1> Color Palette Randomizer</h1>
         <div class="container"></div>
             <div class="circle" id="circle1">
                 <span class="label" id="label1"></span>
@@ -45,23 +36,10 @@
     
         <button onclick="changeColor()">Shuffle 🔀</button>
     
-        <script>
-            // Function to generate a random hex color
-            function getRandomHexColor() {
-                const randomColor = Math.floor(Math.random()*16777215).toString(16); // 0xFFFFFF is the range of hex colors
-                return "#" + randomColor.padStart(6, '0'); // Ensure the color is always 6 digits (pad if necessary)
-            }
+        <script src="script.js" async defer></script>
+        
+        
     
-            function changeColor() {
-                for (let i = 1; i <= 4; i++) {
-                    const circle = document.getElementById(`circle${i}`);
-                    const label = document.getElementById(`label${i}`);
-                    const hexColor = getRandomHexColor();
-                    circle.style.backgroundColor = hexColor;
-                    label.textContent = hexColor; // Update label with hex color code
-                }
-            }
-        </script>
     </body>
     </html>
     
